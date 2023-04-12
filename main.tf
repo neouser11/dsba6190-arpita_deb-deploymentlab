@@ -94,7 +94,7 @@ resource "azurerm_application_insights" "rg" {
 }
 
 resource "azurerm_key_vault" "rg" {
-  name                = "workspaceexamplekeyvault"
+  name                = "${var.class_name}${var.student_name}${var.environment}${random_integer.deployment_id_suffix.result}vt"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   tenant_id           = data.azurerm_client_config.current.tenant_id
