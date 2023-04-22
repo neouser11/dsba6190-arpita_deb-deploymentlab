@@ -43,7 +43,7 @@ resource "azurerm_storage_account" "storage" {
   tags = local.tags
 }
 
-// Storage Account with HNS
+// Storage Account with HNS 
 resource "azurerm_storage_account" "storage2hns" {
   name                     = "${var.class_name}${var.student_name}${var.environment}${random_integer.deployment_id_suffix.result}st-hns"
   resource_group_name      = azurerm_resource_group.rg.name
@@ -153,7 +153,7 @@ resource "azurerm_subnet" "snet" {
 
 resource "azurerm_public_ip" "azpip" {
   name                = "${var.class_name}${var.student_name}${var.environment}${random_integer.deployment_id_suffix.result}pip"
-  location            = azurerm_resource_group.rg.location 
+  location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
